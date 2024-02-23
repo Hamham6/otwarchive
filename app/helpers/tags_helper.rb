@@ -242,11 +242,7 @@ module TagsHelper
     if tags && tags.size > 0
       tags.collect(&:name).join(", ")
     elsif tags.blank? && category_name.blank?
-<<<<<<< HEAD
      "Creator Chose Not To Use Archive Warnings"
-=======
-     "Choose Not To Use Archive Warnings"
->>>>>>> 8e2afebd35fde9a4703c679390e2317a317c51c0
     else
       category_name.blank? ? "" : "No" + " " + category_name
     end
