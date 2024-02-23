@@ -242,7 +242,7 @@ module TagsHelper
     if tags && tags.size > 0
       tags.collect(&:name).join(", ")
     elsif tags.blank? && category_name.blank?
-     "Creator Chose Not To Use Archive Warnings"
+      ArchiveConfig.WARNING_DEFAULT_TAG_NAME
     else
       category_name.blank? ? "" : "No" + " " + category_name
     end
