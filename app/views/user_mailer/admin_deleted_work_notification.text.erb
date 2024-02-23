@@ -1,0 +1,11 @@
+<% content_for :message do %>
+<%= t("mailer.general.greeting.formal", name: @user.login) %>
+
+<%= t('.deleted.text', title: @work.title) %>
+
+<%= t('.import_project.text', opendoors_link: 'http://opendoors.transformativeworks.org/contact-open-doors/') %>
+
+<%= t(".text.tos_violation", contact_abuse_url: new_abuse_report_url) %>
+
+<%= t '.bye' %>
+<% end %>

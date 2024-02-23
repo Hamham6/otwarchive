@@ -1,0 +1,34 @@
+<% content_for :message do %>
+  <%= t("mailer.general.greeting.introductory") %>
+
+  <%= t '.introduction.text', open_doors_link: "http://opendoors.transformativeworks.org", app_name: ArchiveConfig.APP_NAME, app_short_name: ArchiveConfig.APP_SHORT_NAME, app_url: root_url %>
+
+  <%= t '.more_info.text', news_link: admin_posts_url + "?tag=18", open_doors_faq_link: "http://opendoors.transformativeworks.org/faq", open_doors_tutorial_link: "http://opendoors.transformativeworks.org/tutorials", support_link: new_feedback_report_url %>
+
+  <%= t '.mistake.text', open_doors_link: "https://opendoors.transformativeworks.org/en/contact-open-doors/" %>
+
+  <%= t '.access.text' %>
+
+  <%= t '.claim_or_remove.text', claim_url: claim_url(:invitation_token => @token) %>
+
+  <%= t '.uploaded_list' %>
+  <% @external_author.works.each do |work| %>
+    - <%= work.title.html_safe %>  <%= work_url(work) %> <%= (work.fandom_string.blank? ? "" : " (#{work.fandom_string})") %>
+  <% end %>
+
+  <%= t '.unwanted.text', support_link: new_feedback_report_url %>
+
+  <%= t '.redirects' %>
+
+  <%= t '.update_redirect.text', open_doors_link: "https://opendoors.transformativeworks.org/en/contact-open-doors/" %>
+
+  <%= t '.other_works.text' %>
+
+  <%= t '.questions.text', support_link: new_feedback_report_url %>
+
+  <%= t '.email_tips' %>
+
+  <%= t("mailer.general.closing.informal") %>
+  <%= t("mailer.general.signature.open_doors") %>
+  <%= t("mailer.general.signature.parent_org") %>
+<% end %>
